@@ -1,0 +1,11 @@
+{
+  "analysis_id": "4f2c9e1a7b3d4c5e8f9a0b1c2d3e4f5a",
+  "path": "src/db.ts",
+  "language": "typescript",
+  "start_line": 5,
+  "end_line": 10,
+  "total_lines": 20,
+  "content": "export async function findUserByEmail(email: string) {\n  const sql = `SELECT * FROM users WHERE email = '${email}'`;\n  // TODO: switch to parameterized queries\n  const rows = await runQuery(sql);\n  return rows[0];\n}\n",
+  "truncated": false,
+  "redacted_values": 0
+}

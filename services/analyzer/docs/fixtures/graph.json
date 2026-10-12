@@ -1,0 +1,373 @@
+{
+  "analysis_id": "4f2c9e1a7b3d4c5e8f9a0b1c2d3e4f5a",
+  "nodes": [
+    {
+      "id": "fn_df03aa9e525dc008",
+      "name": "<module>",
+      "qualified_name": "<module>",
+      "kind": "module",
+      "language": "typescript",
+      "path": "src/auth/session.ts",
+      "start_line": 1,
+      "end_line": 18,
+      "start_column": 1,
+      "is_anonymous": false,
+      "is_exported": false
+    },
+    {
+      "id": "fn_7628f1fa891acd97",
+      "name": "create",
+      "qualified_name": "SessionManager.create",
+      "kind": "method",
+      "language": "typescript",
+      "path": "src/auth/session.ts",
+      "start_line": 8,
+      "end_line": 11,
+      "start_column": 3,
+      "is_anonymous": false,
+      "is_exported": false
+    },
+    {
+      "id": "fn_7bec7b1f92718fea",
+      "name": "sign",
+      "qualified_name": "SessionManager.sign",
+      "kind": "method",
+      "language": "typescript",
+      "path": "src/auth/session.ts",
+      "start_line": 13,
+      "end_line": 15,
+      "start_column": 3,
+      "is_anonymous": false,
+      "is_exported": false
+    },
+    {
+      "id": "fn_e4a35f08f3f2a044",
+      "name": "<module>",
+      "qualified_name": "<module>",
+      "kind": "module",
+      "language": "typescript",
+      "path": "src/db.ts",
+      "start_line": 1,
+      "end_line": 20,
+      "start_column": 1,
+      "is_anonymous": false,
+      "is_exported": false
+    },
+    {
+      "id": "fn_ab5be50968456b8e",
+      "name": "findUserByEmail",
+      "qualified_name": "findUserByEmail",
+      "kind": "function_declaration",
+      "language": "typescript",
+      "path": "src/db.ts",
+      "start_line": 5,
+      "end_line": 10,
+      "start_column": 8,
+      "is_anonymous": false,
+      "is_exported": true
+    },
+    {
+      "id": "fn_24417c4e8adf123b",
+      "name": "runQuery",
+      "qualified_name": "runQuery",
+      "kind": "function_declaration",
+      "language": "typescript",
+      "path": "src/db.ts",
+      "start_line": 12,
+      "end_line": 20,
+      "start_column": 8,
+      "is_anonymous": false,
+      "is_exported": true
+    },
+    {
+      "id": "fn_f0fc97963a43acae",
+      "name": "<module>",
+      "qualified_name": "<module>",
+      "kind": "module",
+      "language": "typescript",
+      "path": "src/server.ts",
+      "start_line": 1,
+      "end_line": 26,
+      "start_column": 1,
+      "is_anonymous": false,
+      "is_exported": false
+    },
+    {
+      "id": "fn_a18e27685f4c19af",
+      "name": "startServer",
+      "qualified_name": "startServer",
+      "kind": "function_declaration",
+      "language": "typescript",
+      "path": "src/server.ts",
+      "start_line": 7,
+      "end_line": 11,
+      "start_column": 8,
+      "is_anonymous": false,
+      "is_exported": true
+    },
+    {
+      "id": "fn_63a298464ab84151",
+      "name": "handleLogin",
+      "qualified_name": "handleLogin",
+      "kind": "arrow_function",
+      "language": "typescript",
+      "path": "src/server.ts",
+      "start_line": 13,
+      "end_line": 24,
+      "start_column": 21,
+      "is_anonymous": false,
+      "is_exported": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "ce_5b723d9bfc43d058",
+      "source": "fn_7628f1fa891acd97",
+      "target": "fn_7bec7b1f92718fea",
+      "resolution": "this_method",
+      "call_sites": [
+        {
+          "line": 10,
+          "column": 12
+        }
+      ]
+    },
+    {
+      "id": "ce_d65d432022d1ebc2",
+      "source": "fn_ab5be50968456b8e",
+      "target": "fn_24417c4e8adf123b",
+      "resolution": "same_file",
+      "call_sites": [
+        {
+          "line": 8,
+          "column": 22
+        }
+      ]
+    },
+    {
+      "id": "ce_4adf08132da553df",
+      "source": "fn_f0fc97963a43acae",
+      "target": "fn_a18e27685f4c19af",
+      "resolution": "same_file",
+      "call_sites": [
+        {
+          "line": 26,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": "ce_9021966ea310003f",
+      "source": "fn_63a298464ab84151",
+      "target": "fn_7628f1fa891acd97",
+      "resolution": "instance_method",
+      "call_sites": [
+        {
+          "line": 23,
+          "column": 21
+        }
+      ]
+    },
+    {
+      "id": "ce_0a4ca7b79ca18c77",
+      "source": "fn_63a298464ab84151",
+      "target": "fn_ab5be50968456b8e",
+      "resolution": "import",
+      "call_sites": [
+        {
+          "line": 15,
+          "column": 22
+        }
+      ]
+    }
+  ],
+  "unresolved_calls": [
+    {
+      "caller_id": "fn_7628f1fa891acd97",
+      "path": "src/auth/session.ts",
+      "callee": "JSON.stringify",
+      "call_site": {
+        "line": 9,
+        "column": 21
+      },
+      "reason": "unknown_symbol"
+    },
+    {
+      "caller_id": "fn_7628f1fa891acd97",
+      "path": "src/auth/session.ts",
+      "callee": "Date.now",
+      "call_site": {
+        "line": 9,
+        "column": 56
+      },
+      "reason": "unknown_symbol"
+    },
+    {
+      "caller_id": "fn_7bec7b1f92718fea",
+      "path": "src/auth/session.ts",
+      "callee": "createHmac",
+      "call_site": {
+        "line": 14,
+        "column": 12
+      },
+      "reason": "external_module"
+    },
+    {
+      "caller_id": "fn_7bec7b1f92718fea",
+      "path": "src/auth/session.ts",
+      "callee": "createHmac(\"sha256\", JWT_SECRET).update",
+      "call_site": {
+        "line": 14,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_7bec7b1f92718fea",
+      "path": "src/auth/session.ts",
+      "callee": "createHmac(\"sha256\", JWT_SECRET).update(payload).digest",
+      "call_site": {
+        "line": 14,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_e4a35f08f3f2a044",
+      "path": "src/db.ts",
+      "callee": "Pool",
+      "call_site": {
+        "line": 3,
+        "column": 14
+      },
+      "reason": "external_module"
+    },
+    {
+      "caller_id": "fn_24417c4e8adf123b",
+      "path": "src/db.ts",
+      "callee": "pool.connect",
+      "call_site": {
+        "line": 13,
+        "column": 24
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_24417c4e8adf123b",
+      "path": "src/db.ts",
+      "callee": "client.query",
+      "call_site": {
+        "line": 15,
+        "column": 26
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_24417c4e8adf123b",
+      "path": "src/db.ts",
+      "callee": "client.release",
+      "call_site": {
+        "line": 18,
+        "column": 5
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_a18e27685f4c19af",
+      "path": "src/server.ts",
+      "callee": "app.post",
+      "call_site": {
+        "line": 8,
+        "column": 3
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_a18e27685f4c19af",
+      "path": "src/server.ts",
+      "callee": "app.listen",
+      "call_site": {
+        "line": 9,
+        "column": 3
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "res.status",
+      "call_site": {
+        "line": 17,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "res.status(401).end",
+      "call_site": {
+        "line": 17,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "compare",
+      "call_site": {
+        "line": 19,
+        "column": 20
+      },
+      "reason": "external_module"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "res.status",
+      "call_site": {
+        "line": 21,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "res.status(401).end",
+      "call_site": {
+        "line": 21,
+        "column": 12
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_63a298464ab84151",
+      "path": "src/server.ts",
+      "callee": "res.json",
+      "call_site": {
+        "line": 23,
+        "column": 3
+      },
+      "reason": "member_call"
+    },
+    {
+      "caller_id": "fn_f0fc97963a43acae",
+      "path": "src/server.ts",
+      "callee": "express",
+      "call_site": {
+        "line": 26,
+        "column": 13
+      },
+      "reason": "external_module"
+    }
+  ],
+  "unresolved_calls_total": 18,
+  "truncated": false,
+  "limitations": [
+    "Only statically resolvable calls are edges; absence of an edge does not prove absence of a call.",
+    "Edges are call relationships, not data flow.",
+    "Not resolved: dynamic dispatch, callbacks and higher-order functions, inherited methods, tsconfig path aliases and calls into external packages."
+  ]
+}

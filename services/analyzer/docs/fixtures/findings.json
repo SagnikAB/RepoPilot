@@ -1,0 +1,51 @@
+{
+  "analysis_id": "4f2c9e1a7b3d4c5e8f9a0b1c2d3e4f5a",
+  "findings": [
+    {
+      "id": "fd_9a1efc510b916112",
+      "rule_id": "js.hardcoded-credential",
+      "title": "Hardcoded credential-like value",
+      "description": "A variable or property whose name suggests a secret is assigned a string literal. Secrets in source code can leak through version control.",
+      "severity": "medium",
+      "confidence": "medium",
+      "location": {
+        "path": "src/auth/session.ts",
+        "start_line": 3,
+        "end_line": 3
+      },
+      "function_id": "fn_df03aa9e525dc008",
+      "evidence": "const JWT_SECRET = \"[REDACTED len=33]\";",
+      "review_status": "needs_review",
+      "next_step": "Confirm whether this is a real secret or a placeholder; if real, rotate it and load it from configuration or a secret store instead.",
+      "limitations": [
+        "The matched value is redacted; the rule cannot tell real secrets from test placeholders.",
+        "Secrets assembled at runtime or stored in non-source files are not detected."
+      ],
+      "cwe_id": "CWE-798"
+    },
+    {
+      "id": "fd_3a1a105fef08bbf6",
+      "rule_id": "js.sql-string-construction",
+      "title": "SQL query built with string interpolation",
+      "description": "A string that looks like a SQL statement is built from a template literal or concatenation with non-constant values. If any interpolated value is user-controlled, this may allow SQL injection.",
+      "severity": "high",
+      "confidence": "medium",
+      "location": {
+        "path": "src/db.ts",
+        "start_line": 6,
+        "end_line": 6
+      },
+      "function_id": "fn_ab5be50968456b8e",
+      "evidence": "const sql = `SELECT * FROM users WHERE email = '${email}'`;",
+      "review_status": "needs_review",
+      "next_step": "Check whether the interpolated values can come from request input (trace the enclosing function's callers) and whether the query is executed with parameter binding instead.",
+      "limitations": [
+        "The rule does not track where interpolated values originate.",
+        "Sanitization performed before this line is not detected."
+      ],
+      "cwe_id": "CWE-89"
+    }
+  ],
+  "total": 2,
+  "truncated": false
+}
