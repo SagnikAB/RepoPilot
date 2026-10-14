@@ -1,0 +1,8 @@
+fastapi==0.143.0
+pydantic==2.14.1
+pydantic-settings==2.15.0
+uvicorn==0.54.0
+# tree-sitter 0.26.0: do not use Point.row/.column (refcount bug, see README).
+tree-sitter==0.26.0
+tree-sitter-javascript==0.25.0
+tree-sitter-typescript==0.23.2

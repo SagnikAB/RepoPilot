@@ -1,0 +1,35 @@
+# Tool configuration only. Dependencies are pinned in requirements*.txt.
+[project]
+name = "repopilot-analyzer"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "native_crash: deliberately crashes a native process; skipped unless REPOPILOT_RUN_NATIVE_CRASH_CANARY=1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+# Tests run their own fixed subprocess commands and use addresses as data.
+"tests/**" = ["S101", "S104", "S603", "S607"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["app", "tests", "scripts"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true

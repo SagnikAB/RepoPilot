@@ -1,0 +1,25 @@
+{
+  "analysis_id": "4f2c9e1a7b3d4c5e8f9a0b1c2d3e4f5a",
+  "source": "fn_63a298464ab84151",
+  "target": "fn_24417c4e8adf123b",
+  "max_depth": 8,
+  "max_paths": 10,
+  "paths": [
+    {
+      "node_ids": [
+        "fn_63a298464ab84151",
+        "fn_ab5be50968456b8e",
+        "fn_24417c4e8adf123b"
+      ],
+      "edge_ids": [
+        "ce_0a4ca7b79ca18c77",
+        "ce_d65d432022d1ebc2"
+      ]
+    }
+  ],
+  "truncated": false,
+  "limitations": [
+    "A path means each function contains a resolved call to the next. It does not prove that the path executes at runtime, that data flows along it, or that anything is exploitable.",
+    "14 unresolved call(s) occur in functions reachable from the source within 8 calls; additional paths may exist through them."
+  ]
+}

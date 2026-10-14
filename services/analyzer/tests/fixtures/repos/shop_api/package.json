@@ -1,0 +1,7 @@
+{
+  "name": "shop-api-fixture",
+  "private": true,
+  "scripts": {
+    "postinstall": "echo 'the analyzer must never run this'"
+  }
+}
