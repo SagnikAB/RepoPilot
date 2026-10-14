@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { getAiProviderConfig, getAnalyzerBaseUrl } from "@/lib/config";
 import { validateCitations } from "@/lib/investigation/citations";
 import { completeJson, ProviderError } from "@/lib/investigation/provider";
