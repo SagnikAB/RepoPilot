@@ -5,14 +5,14 @@
       "use": "@vercel/next"
     },
     {
-      "src": "services/analyzer/main.py",
+      "src": "services/analyzer/app/main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/analyzer/(.*)",
-      "dest": "services/analyzer/main.py"
+      "src": "/api/(.*)",
+      "dest": "services/analyzer/app/main.py"
     },
     {
       "src": "/(.*)",

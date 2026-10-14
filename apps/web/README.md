@@ -36,13 +36,13 @@ python -m venv .venv
 source .venv/bin/activate  # Or on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# Start demo analyzer server
-python -m app.main
-# Or run with uvicorn:
+# Start analyzer server from the analyzer directory
 uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 Verify backend health at `http://127.0.0.1:8000/api/health`.
+
+The analyzer is a FastAPI ASGI app; the supported startup path is `uvicorn app.main:app ...`, not `python -m app.main`.
 
 ### 3. Frontend Configuration
 
@@ -57,7 +57,7 @@ Configure your environment variables in `.env.local`:
 
 | Variable | Description | Default |
 |---|---|---|
-| `ANALYZER_API_URL` | Base URL of the Python analyzer service | `http://127.0.0.1:8000` |
+| `ANALYZER_API_URL` | Base URL of the Python analyzer service; may include an optional path prefix | `http://127.0.0.1:8000` |
 | `OPENAI_API_KEY` | OpenAI API key for grounded AI investigation | *(optional)* |
 | `OPENAI_BASE_URL` | Optional custom base URL for OpenAI-compatible proxies | `https://api.openai.com/v1` |
 | `OPENAI_MODEL` | Optional model name | `gpt-4o-mini` |

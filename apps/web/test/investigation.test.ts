@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
+import { getAiProviderConfig, getAnalyzerBaseUrl } from "@/lib/config";
 import { validateCitations } from "@/lib/investigation/citations";
 import { completeJson, ProviderError } from "@/lib/investigation/provider";
 import { runInvestigation } from "@/lib/investigation/service";
@@ -440,5 +441,37 @@ describe("runInvestigation workflow and bounded correction", () => {
     if (!result.ok) {
       expect(result.error.code).toBe("citation_validation_failed");
     }
+  });
+});
+
+describe("environment configuration", () => {
+  const originalAiKey = process.env.OPENAI_API_KEY;
+  const originalAnalyzerUrl = process.env.ANALYZER_API_URL;
+
+  beforeEach(() => {
+    vi.restoreAllMocks();
+    delete process.env.OPENAI_API_KEY;
+    delete process.env.ANALYZER_API_URL;
+  });
+
+  afterEach(() => {
+    if (originalAiKey === undefined) {
+      delete process.env.OPENAI_API_KEY;
+    } else {
+      process.env.OPENAI_API_KEY = originalAiKey;
+    }
+    if (originalAnalyzerUrl === undefined) {
+      delete process.env.ANALYZER_API_URL;
+    } else {
+      process.env.ANALYZER_API_URL = originalAnalyzerUrl;
+    }
+  });
+
+  it("treats placeholder credentials as unconfigured and preserves analyzer path prefixes", () => {
+    process.env.OPENAI_API_KEY = "your-openai-api-key-here";
+    process.env.ANALYZER_API_URL = "https://example.com/repopilot/";
+
+    expect(getAiProviderConfig()).toBeNull();
+    expect(getAnalyzerBaseUrl()).toBe("https://example.com/repopilot");
   });
 });
